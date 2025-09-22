@@ -110,6 +110,17 @@ git checkout -b development
 git pull origin development
 ```
 
+### 2.1. Merging New Changes from the Base Repository's Development Branch with your Forked Repo's Development Branch
+This is necessary because someone else has probably made changes to their forked repo and these changes have been merged with the base repo. For you to get those changes from the base repo's development branch without losing your work, follow these steps.
+ - Run "git remote add upstream https://github.com/Dala-Note/dala-note-fe.git" in your terminal, this adds the main repo as an upstream remote.
+ - Run "git remote -v" shortly after. This checks the remote that has just been added.
+ - After that, run "git fetch upstream", this will fetch the changes from the base repository's branches.
+ - Run "git checkout Development" to switch to your dev branch if you're not already there.
+ - Run "git merge upstream/Development". This should merge the changes.
+ - Lastly, push your changes back to your forked repo's branch.
+
+
+
 ### 3. Adding New Features
 
 When adding a new feature, follow this workflow:
